@@ -1,0 +1,7 @@
+[tools]
+terraform = "latest"
+lefthook = "latest"
+
+[tasks.fmt]
+description = "Run terraform fmt on all subdirectories"
+run = "terraform fmt -recursive"

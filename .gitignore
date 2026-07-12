@@ -1,0 +1,42 @@
+# ==========================================
+# Core Terraform files to ignore
+# ==========================================
+
+# Local directory for managing plugins and modules
+.terraform/
+
+# Hide log files (useful for debugging issues with TF_LOG)
+*.log
+*.tflog
+
+# Crash log files
+crash.log
+crash.*.log
+
+# ==========================================
+# State Files (Crucial to ignore for security)
+# ==========================================
+# These files store the real-world infrastructure mapping. 
+# They frequently contain secrets and plain-text passwords.
+
+*.tfstate
+*.tfstate.*
+
+# ==========================================
+# Variables and Secrets
+# ==========================================
+# Ignore files containing sensitive variable values.
+
+*.tfvars
+*.tfvars.json
+
+# ==========================================
+# CLI Configuration and Plan files
+# ==========================================
+
+# Ignore local CLI configuration overrides
+.terraformrc
+terraform.rc
+
+# Ignore generated execution plans (may contain sensitive data)
+*.tfplan
