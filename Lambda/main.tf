@@ -62,6 +62,9 @@ resource "aws_lambda_function" "hello_world_function" {
   handler       = "index.handler" # Tells AWS: Look in index.py for a function named handler
   runtime       = "python3.12"
 
+  memory_size = 256 # MB
+  timeout     = 60  # seconds
+
   # Publish a new immutable version each time the code changes
   publish = true
 
