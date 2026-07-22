@@ -17,6 +17,9 @@ resource "aws_cloudwatch_log_group" "lambda_logs" {
 # 2. Destination S3 bucket for the exported logs
 resource "aws_s3_bucket" "lambda_logs" {
   bucket = "lambda-logs-${data.aws_caller_identity.current.account_id}"
+
+  # Allow `terraform destroy` to delete the bucket even when it still holds logs
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_public_access_block" "lambda_logs" {
